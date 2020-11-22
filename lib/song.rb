@@ -9,17 +9,6 @@ class Song
 
   attr_reader :name, :artist, :genre
 
-  def initialize(name, artists, genres)
-    @name = name
-    @artist = artists
-    @genre = genres
-
-    @@count += 1
-    @@genres << @genre
-    @@artists << @artist
-
-  end
-
   def create_genre_count
     @@genre.uniq.each { |genre| genre_count[genre] = 1 }
   end
@@ -34,6 +23,23 @@ class Song
 
   def fill_artist_count
     @@artist.uniq.each { |artist| artist_count[artist] += 1}
+  end
+
+  def initialize(name, artists, genres)
+    @name = name
+    @artist = artists
+    @genre = genres
+
+    @@count += 1
+    @@genres << @genre
+    @@artists << @artist
+
+    create_genre_count
+    fill_genre_count
+
+    create_artist_count
+    fill_artist_count
+
   end
 
   def self.count
