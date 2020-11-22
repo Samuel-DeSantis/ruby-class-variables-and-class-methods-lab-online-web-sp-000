@@ -35,7 +35,7 @@ class Song
   end
 
   def create_artist_count
-    @@artists.uniq.each { |artist| @@artist_count[genre] = 1 }
+    @@artists.uniq.each { |artist| @@artist_count[artist] = 1 }
   end
 
   def fill_artist_count
