@@ -33,7 +33,6 @@ class Song
 
   def fill_genre_count
     @@genres.uniq.each { |genre| @@genre_count[genre] += 1}
-    puts @@genre_count
   end
 
   def create_artist_count
