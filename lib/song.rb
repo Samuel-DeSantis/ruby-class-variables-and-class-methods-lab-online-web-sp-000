@@ -18,11 +18,6 @@ class Song
     @@genres << @genre
     @@artists << @artist
 
-    create_genre_count
-    fill_genre_count
-
-    create_artist_count
-    fill_artist_count
   end
 
   def create_genre_count
