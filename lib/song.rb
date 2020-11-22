@@ -31,7 +31,7 @@ class Song
   end
 
   def fill_genre_count
-    @@genres.each { |genre| @@genre_count[genre] += 1}
+    @@genres.uniqeach { |genre| @@genre_count[genre] += 1}
   end
 
   def create_artist_count
@@ -39,7 +39,7 @@ class Song
   end
 
   def fill_artist_count
-    @@artists.each { |artist| @@artist_count[artist] += 1}
+    @@artists.uniq.each { |artist| @@artist_count[artist] += 1}
   end
 
   def self.count
